@@ -1,3 +1,20 @@
-﻿@{
+﻿@model AppExercicio.Models.Usuario;
+
+@{
     ViewData["Title"] = "Usuário";
 }
+
+<h1>Funcionário Cadastrado</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="https://fakeimg.pl/440x320/282828/eae0d0?text=@Model.Nome" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nome</h5>
+        <p class="card-text">@Model.Observacao</p>
+        <div>
+            <p><strong>ID: </strong>@Model.Id</p>
+            <p><strong>Login: </strong>@Model.Login</p>
+            <p><strong>Data de nascimento: </strong>@Model.DataDeNascimento.ToShortDateString()</p>
+        </div>
+    </div>
+</div>

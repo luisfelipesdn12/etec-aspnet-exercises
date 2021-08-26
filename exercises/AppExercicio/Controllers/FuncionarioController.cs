@@ -20,7 +20,13 @@ namespace AppExercicio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Funcionario funcionario = new Funcionario{
+                Id = 1,
+                Nome = "Fulano",
+                Cargo = "Professor"
+            };
+
+            return View(funcionario);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

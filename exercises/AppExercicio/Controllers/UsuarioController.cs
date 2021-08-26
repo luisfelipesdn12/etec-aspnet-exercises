@@ -20,7 +20,17 @@ namespace AppExercicio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Usuario usuario = new Usuario{
+                Id = 1,
+                Nome = "Fulano",
+                Observacao = "Observação de exemplo, blablabla.",
+                DataDeNascimento = DateTime.Now,
+                Email = "fulano@detal.com",
+                Login = "fulano",
+                Senha = "123456",
+            };
+
+            return View(usuario);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
