@@ -1,2 +1,8 @@
 # etec-aspnet-exercises
-Exercícios de ASP.NET no meu curso na ETEC
+Exercícios de ASP.NET do meu curso na ETEC
+
+---
+
+## Exercícios
+
+Todos os exercícios estão disponíveis no repositório `exercises/`.
