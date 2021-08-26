@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,11 +9,11 @@ using AppExercicio.Models;
 
 namespace AppExercicio.Controllers
 {
-    public class HomeController : Controller
+    public class UsuarioController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<UsuarioController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public UsuarioController(ILogger<UsuarioController> logger)
         {
             _logger = logger;
         }
