@@ -5,4 +5,4 @@ Exercícios de ASP.NET do meu curso na ETEC
 
 ## Exercícios
 
-Todos os exercícios estão disponíveis no repositório `exercises/`.
+Todos os exercícios estão disponíveis no diretório `exercises/`.

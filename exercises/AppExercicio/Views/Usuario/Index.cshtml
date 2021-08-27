@@ -11,7 +11,7 @@
         <div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Id)
-                <input type="number" class="form-control" name="@Html.NameFor(m => m.Id)" required>
+                <input type="number" min=1 max=200 class="form-control" name="@Html.NameFor(m => m.Id)" required>
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Nome)
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Observacao)
-                <input type="text" class="form-control" name="@Html.NameFor(m => m.Observacao)" required>
+                <input type="text" class="form-control" name="@Html.NameFor(m => m.Observacao)" minlength="5" maxlength="50">
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.DataDeNascimento)
@@ -39,10 +39,14 @@
                 @Html.LabelFor(m => m.Senha)
                 <input type="password" class="form-control" name="@Html.NameFor(m => m.Senha)" required>
             </div>
+            <div class="form-group">
+                <label for="confirmaSenha">Confirmar Senha</label>
+                <input type="password" class="form-control" name="confirmaSenha" required>
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-between" style="max-width: 40rem;">
-        <button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary">Cancelar</button>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary">Cancelar</button>
     </div>
 }
