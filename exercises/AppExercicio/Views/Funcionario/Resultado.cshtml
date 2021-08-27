@@ -1,0 +1,20 @@
+﻿@model AppExercicio.Models.Funcionario;
+
+@{
+    ViewData["Title"] = "Funcionário";
+}
+
+<h1 class="mb-4">Funcionário Cadastrado</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="https://fakeimg.pl/440x320/282828/eae0d0?text=@Model.Nome" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nome</h5>
+        <div class="d-flex flex-wrap justify-content-between">
+            <p><strong>ID: </strong>@Model.Id</p>
+            <p><strong>Cargo: </strong>@Model.Cargo</p>
+        </div>
+    </div>
+</div>
+
+<button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary mt-4">Voltar</button>

@@ -33,6 +33,11 @@ namespace AppExercicio.Controllers
             return View(usuario);
         }
 
+        public IActionResult Resultado(Usuario usuario)
+        {
+            return View(usuario);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

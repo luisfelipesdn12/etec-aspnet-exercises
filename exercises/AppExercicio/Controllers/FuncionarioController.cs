@@ -28,6 +28,11 @@ namespace AppExercicio.Controllers
 
             return View(funcionario);
         }
+        
+        public IActionResult Resultado(Funcionario funcionario)
+        {
+            return View(funcionario);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
