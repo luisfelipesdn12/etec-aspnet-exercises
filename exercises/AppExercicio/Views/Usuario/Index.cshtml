@@ -4,49 +4,64 @@
     ViewData["Title"] = "Usuário";
 }
 
+<style>
+    .field-validation-error {
+        color: red;
+        opacity: 80%;
+    }
+</style>
+
 <h1 class="mb-4">Cadastro de Usuário</h1>
 
-@using (Html.BeginForm("Resultado", "Usuario", FormMethod.Get, new { @style="width: 30rem;" })) {
+@using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @style="width: 30rem;" })) {
     <div class="d-flex justify-content-between">
-        <div>
+        <div style="width: 14rem;">
             <div class="form-group">
                 @Html.LabelFor(m => m.Id)
-                <input type="number" min=1 max=200 class="form-control" name="@Html.NameFor(m => m.Id)" required>
+                @Html.EditorFor(m => m.Id, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.Id)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Nome)
-                <input type="text" class="form-control" name="@Html.NameFor(m => m.Nome)" required>
+                @Html.EditorFor(m => m.Nome, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.Nome)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Observacao)
-                <input type="text" class="form-control" name="@Html.NameFor(m => m.Observacao)" minlength="5" maxlength="50">
+                @Html.EditorFor(m => m.Observacao, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.Observacao)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.DataDeNascimento)
-                <input type="date" class="form-control" name="@Html.NameFor(m => m.DataDeNascimento)" required>
+                @Html.EditorFor(m => m.DataDeNascimento, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.DataDeNascimento)
             </div>
         </div>
-        <div>
+        <div style="width: 14rem;">
             <div class="form-group">
                 @Html.LabelFor(m => m.Email)
-                <input type="email" class="form-control" name="@Html.NameFor(m => m.Email)" required>
+                @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.Email)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Login)
-                <input type="text" class="form-control" name="@Html.NameFor(m => m.Login)" required>
+                @Html.EditorFor(m => m.Login, new { htmlAttributes = new { @class="form-control" }})
+                @Html.ValidationMessageFor(m => m.Login)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Senha)
-                <input type="password" class="form-control" name="@Html.NameFor(m => m.Senha)" required>
+                @Html.PasswordFor(m => m.Senha, new { @class="form-control" })
+                @Html.ValidationMessageFor(m => m.Senha)
             </div>
             <div class="form-group">
-                <label for="confirmaSenha">Confirmar Senha</label>
-                <input type="password" class="form-control" name="confirmaSenha" required>
+                @Html.LabelFor(m => m.ConfirmaSenha)
+                @Html.PasswordFor(m => m.ConfirmaSenha, new { @class="form-control" })
+                @Html.ValidationMessageFor(m => m.ConfirmaSenha)
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-between" style="max-width: 40rem;">
+        <button type="button" onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary">Cancelar</button>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary">Cancelar</button>
     </div>
 }

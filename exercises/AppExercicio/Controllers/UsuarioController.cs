@@ -20,15 +20,19 @@ namespace AppExercicio.Controllers
 
         public IActionResult Index()
         {
-            Usuario usuario = new Usuario{
-                Id = 1,
-                Nome = "Fulano",
-                Observacao = "Observação de exemplo, blablabla.",
-                DataDeNascimento = DateTime.Now,
-                Email = "fulano@detal.com",
-                Login = "fulano",
-                Senha = "123456",
-            };
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Usuario usuario)
+        {
+            if (usuario.Senha != usuario.ConfirmaSenha) {
+                ModelState.AddModelError("ConfirmaSenha", "As senhas devem ser iguais");
+            }
+
+            if (ModelState.IsValid) {
+                return View("Resultado", usuario);
+            }
 
             return View(usuario);
         }
