@@ -8,7 +8,7 @@ namespace AppExercicio.Models
         [Display (Name = "Código")]
         [Required (ErrorMessage = "O campo é obrigatório")]
         [Range (1, 200, ErrorMessage = "Deve ser um número entre 1 e 200")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required (ErrorMessage = "Informe o nome")]
         public string Nome { get; set; }
@@ -21,7 +21,7 @@ namespace AppExercicio.Models
         [Display (Name = "Data de Nascimento")]
         [Required (ErrorMessage = "A data de nascimento é obrigatória")]
         [DisplayFormat (DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DataDeNascimento { get; set; }
+        public DateTime? DataDeNascimento { get; set; }
 
         [Display (Name = "E-mail")]
         [Required (ErrorMessage = "Informe o e-mail")]
@@ -32,10 +32,12 @@ namespace AppExercicio.Models
         public string Login { get; set; }
 
         [Required (ErrorMessage = "Informe a senha")]
+        [Compare ("ConfirmaSenha", ErrorMessage = "As senhas devem ser iguais")]
         public string Senha { get; set; }
 
         [Display (Name = "Confirme a senha")]
         [Required (ErrorMessage = "Confirme a senha")]
+        [Compare ("Senha", ErrorMessage = "As senhas devem ser iguais")]
         public string ConfirmaSenha { get; set; }
     }
 }
