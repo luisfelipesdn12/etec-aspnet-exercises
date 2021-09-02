@@ -4,17 +4,32 @@
     ViewData["Title"] = "Usuário";
 }
 
+<style>
+    .badge {
+        width: 100%;
+    }
+</style>
+
 <h1>Usuário Cadastrado</h1>
 
-<div class="card" style="width: 18rem;">
+<div class="card text-center text-white bg-dark" style="width: 18rem;">
+    <div class="card-header">
+        Funcionário @Model.Id
+    </div>
     <img src="https://fakeimg.pl/440x320/282828/eae0d0?text=@Model.Nome" class="card-img-top">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Nome</h5>
-        <p class="card-text">@Model.Observacao</p>
-        <div>
-            <p><strong>ID: </strong>@Model.Id</p>
-            <p><strong>Login: </strong>@Model.Login</p>
-            <p><strong>Data de nascimento: </strong>@Model.DataDeNascimento?.ToShortDateString()</p>
-        </div>
+    <ul class="list-group list-group-flush text-white bg-dark">
+        <li class="list-group-item text-white bg-dark">
+            <h5 class="card-title">@Model.Nome</h5>
+            <p class="card-text">@Model.Observacao</p>
+        </li>
+        <li class="list-group-item text-white bg-dark">
+            <p class="card-text" style="margin: 0;">Login</p>
+            <h3><span class="badge bg-info">@Model.Login</span></h3>
+            <p class="card-text" style="margin: 0;">Senha</p>
+            <h3><span class="badge bg-info">@Model.Senha</span></h3>
+        </li>
+    </ul>
+    <div class="card-footer text-muted">
+        @Model.DataDeNascimento?.ToShortDateString()
     </div>
 </div>
