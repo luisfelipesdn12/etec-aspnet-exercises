@@ -16,7 +16,7 @@
 
 <h1>Usuário Cadastrado</h1>
 
-<div class="card text-center text-white bg-dark" style="width: 18rem;">
+<div class="card text-center text-white bg-dark" style="width: max-content;">
     <div class="card-header">
         <strong class="card-text text-muted" style="margin: 0;">ID:</strong> @Model.Id
     </div>
@@ -39,7 +39,7 @@
         </li>
         <li class="list-group-item text-white bg-dark">
             <strong class="card-text text-muted" style="margin: 0;">E-mail</strong>
-            <h4><a href="mailto:@Model.Email" target="_blank" rel="noopener noreferrer" class="badge bg-secondary text-white" style="font-weight: normal;">@Model.Email</a></h4>
+            <h4><a title="Enviar um e-mail para @Model.Nome" href="mailto:@Model.Email" target="_blank" rel="noopener noreferrer" class="badge bg-secondary text-white" style="font-weight: normal;">@Model.Email</a></h4>
             <strong class="card-text text-muted" style="margin: 0;">Data de Nascimento</strong>
             <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.DataDeNascimento?.ToShortDateString()</span></h4>
         </li>
