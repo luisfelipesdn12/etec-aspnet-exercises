@@ -20,11 +20,15 @@ namespace AppExercicio.Controllers
 
         public IActionResult Index()
         {
-            Funcionario funcionario = new Funcionario{
-                Id = 1,
-                Nome = "Fulano",
-                Cargo = "Professor"
-            };
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Funcionario funcionario)
+        {
+            if (ModelState.IsValid) {
+                return View("Resultado", funcionario);
+            }
 
             return View(funcionario);
         }

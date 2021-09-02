@@ -26,13 +26,6 @@ namespace AppExercicio.Controllers
         [HttpPost]
         public IActionResult Index(Usuario usuario)
         {
-            Console.WriteLine("usuario.Id");
-            Console.WriteLine(usuario.Id);
-
-            if (usuario.Senha != usuario.ConfirmaSenha) {
-                ModelState.AddModelError("ConfirmaSenha", "As senhas devem ser iguais");
-            }
-
             if (ModelState.IsValid) {
                 return View("Resultado", usuario);
             }

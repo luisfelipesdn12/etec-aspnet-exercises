@@ -8,28 +8,43 @@
     .badge {
         width: 100%;
     }
+
+    .bg-secondary {
+        background-color: #6c757d40!important;
+    }
 </style>
 
 <h1>Usuário Cadastrado</h1>
 
 <div class="card text-center text-white bg-dark" style="width: 18rem;">
     <div class="card-header">
-        Funcionário @Model.Id
+        <strong class="card-text text-muted" style="margin: 0;">ID:</strong> @Model.Id
     </div>
-    <img src="https://fakeimg.pl/440x320/282828/eae0d0?text=@Model.Nome" class="card-img-top">
+    <img src="https://avatars.dicebear.com/api/avataaars/@(Model.Nome).svg" class="card-img-top">
     <ul class="list-group list-group-flush text-white bg-dark">
         <li class="list-group-item text-white bg-dark">
-            <h5 class="card-title">@Model.Nome</h5>
-            <p class="card-text">@Model.Observacao</p>
+            <strong class="card-text text-muted" style="margin: 0;">Nome</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Nome</span></h4>
+            @if (!string.IsNullOrEmpty(Model.Observacao))
+            {
+                <strong class="card-text text-muted" style="margin: 0;">Observação</strong>
+                <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Observacao</span></h4>
+            }
         </li>
         <li class="list-group-item text-white bg-dark">
-            <p class="card-text" style="margin: 0;">Login</p>
-            <h3><span class="badge bg-info">@Model.Login</span></h3>
-            <p class="card-text" style="margin: 0;">Senha</p>
-            <h3><span class="badge bg-info">@Model.Senha</span></h3>
+            <strong class="card-text text-muted" style="margin: 0;">Login</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Login</span></h4>
+            <strong class="card-text text-muted" style="margin: 0;">Senha</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Senha</span></h4>
+        </li>
+        <li class="list-group-item text-white bg-dark">
+            <strong class="card-text text-muted" style="margin: 0;">E-mail</strong>
+            <h4><a href="mailto:@Model.Email" target="_blank" rel="noopener noreferrer" class="badge bg-secondary text-white" style="font-weight: normal;">@Model.Email</a></h4>
+            <strong class="card-text text-muted" style="margin: 0;">Data de Nascimento</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.DataDeNascimento?.ToShortDateString()</span></h4>
         </li>
     </ul>
-    <div class="card-footer text-muted">
-        @Model.DataDeNascimento?.ToShortDateString()
-    </div>
+    <div class="card-footer text-muted"></div>
 </div>
+
+<button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary mt-4">Voltar</button>

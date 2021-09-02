@@ -6,15 +6,20 @@
 
 <h1 class="mb-4">Funcionário Cadastrado</h1>
 
-<div class="card" style="width: 18rem;">
-    <img src="https://fakeimg.pl/440x320/282828/eae0d0?text=@Model.Nome" class="card-img-top">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Nome</h5>
-        <div class="d-flex flex-wrap justify-content-between">
-            <p><strong>ID: </strong>@Model.Id</p>
-            <p><strong>Cargo: </strong>@Model.Cargo</p>
-        </div>
+<div class="card text-center text-white bg-dark" style="width: 18rem;">
+    <div class="card-header">
+        <strong class="card-text text-muted" style="margin: 0;">ID:</strong> @Model.Id
     </div>
+    <img src="https://avatars.dicebear.com/api/avataaars/@(Model.Nome).svg" class="card-img-top">
+    <ul class="list-group list-group-flush text-white bg-dark">
+        <li class="list-group-item text-white bg-dark">
+            <strong class="card-text text-muted" style="margin: 0;">Nome</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Nome</span></h4>
+            <strong class="card-text text-muted" style="margin: 0;">Cargo</strong>
+            <h4><span class="badge bg-secondary" style="font-weight: normal;">@Model.Cargo</span></h4>
+        </li>
+    </ul>
+    <div class="card-footer text-muted"></div>
 </div>
 
 <button onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-secondary mt-4">Voltar</button>

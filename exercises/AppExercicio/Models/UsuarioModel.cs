@@ -29,6 +29,8 @@ namespace AppExercicio.Models
         public string Email { get; set; }
 
         [Required (ErrorMessage = "Informe o login")]
+        [StringLength (15, MinimumLength = 5, ErrorMessage = "O campo deve ter entre 5 e 15 caracteres")]
+        [RegularExpression ("^(\\D*)$", ErrorMessage = "O login não pode conter números")]
         public string Login { get; set; }
 
         [Required (ErrorMessage = "Informe a senha")]
