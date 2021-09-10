@@ -38,6 +38,27 @@ namespace AppExercicio.Controllers
             return View(usuario);
         }
 
+        public JsonResult ValidaLogin(string login)
+        {   
+            var logins = new List<string>{
+                "dwight",
+                "michael",
+                "pam",
+                "jim",
+                "angela",
+                "kevin",
+                "oscar",
+                "creed",
+                "toby",
+                "stanley",
+                "kelly",
+                "ryan",
+                "darryl",
+            };
+
+            return Json(!logins.Contains(login, StringComparer.OrdinalIgnoreCase));
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AppExercicio.Models
 {
@@ -29,8 +30,9 @@ namespace AppExercicio.Models
         public string Email { get; set; }
 
         [Required (ErrorMessage = "Informe o login")]
-        [StringLength (15, MinimumLength = 5, ErrorMessage = "O campo deve ter entre 5 e 15 caracteres")]
+        [Remote ("ValidaLogin", "Usuario", ErrorMessage = "Este usuário já existe")]
         [RegularExpression ("^(\\D*)$", ErrorMessage = "O login não pode conter números")]
+        [StringLength (15, MinimumLength = 5, ErrorMessage = "O campo deve ter entre 5 e 15 caracteres")]
         public string Login { get; set; }
 
         [Required (ErrorMessage = "Informe a senha")]
