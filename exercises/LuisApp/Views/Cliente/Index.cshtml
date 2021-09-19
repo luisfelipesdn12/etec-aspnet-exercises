@@ -1,0 +1,11 @@
+@model LuisApp.Models.Cliente;
+
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<p>Código: @Model.Id</p>
+<p>Nome: @Model.Nome</p>
+<p>CPF: @Model.Cpf</p>
+<p>RG: @Model.Rg - @Model.DigRg</p>
+<p>Telefone: @Model.Telefone</p>
