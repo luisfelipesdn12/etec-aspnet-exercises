@@ -4,6 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.26"/>
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
   </ItemGroup>
 </Project>
