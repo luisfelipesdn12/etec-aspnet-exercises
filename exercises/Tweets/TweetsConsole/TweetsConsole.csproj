@@ -4,6 +4,10 @@
     <ProjectReference Include="..\TweetsModels\TweetsModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PromptCLI" Version="1.2.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
